@@ -1,0 +1,97 @@
+openapi: 3.0.1
+info:
+  title: NorrisGPT Chuck Norris Jokes
+  description: Access Chuck Norris jokes through various filters.
+  version: 'v1'
+servers:
+  - url: https://chucknorris-gpt-assistant.uc.r.appspot.com
+paths:
+  /chuck-norris/random:
+    get:
+      operationId: getRandomChuckNorrisJoke
+      summary: Retrieve a random Chuck Norris joke
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JokeResponse'
+  /chuck-norris/joke/{category}:
+    get:
+      operationId: getChuckNorrisJokeByCategory
+      summary: Retrieve a random Chuck Norris joke from a given category
+      parameters:
+        - in: path
+          name: category
+          schema:
+            type: string
+          required: true
+          description: Category of the joke.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JokeResponse'
+  /chuck-norris/categories:
+    get:
+      operationId: getChuckNorrisCategories
+      summary: Retrieve a list of available joke categories
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponse'
+  /chuck-norris/search:
+    get:
+      operationId: searchChuckNorrisJokes
+      summary: Free text search for Chuck Norris jokes
+      parameters:
+        - in: query
+          name: query
+          schema:
+            type: string
+          required: true
+          description: Search query for jokes.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+
+components:
+  schemas:
+    JokeResponse:
+      type: object
+      properties:
+        icon_url:
+          type: string
+          description: URL of the Chuck Norris icon
+        id:
+          type: string
+          description: Unique ID of the joke
+        url:
+          type: string
+          description: URL of the joke
+        value:
+          type: string
+          description: The joke text
+    CategoriesResponse:
+      type: array
+      items:
+        type: string
+        description: Joke category
+    SearchResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/JokeResponse'
+
