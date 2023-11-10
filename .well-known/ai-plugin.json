@@ -1,0 +1,19 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "TinyTap Educational Games",
+  "name_for_model": "TinyTapGames",
+  "description_for_human": "Get some educational games to play with your kid.",
+  "description_for_model": "Get some educational games.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://openaitests.oa.r.appspot.com/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://openaitests.oa.r.appspot.com/logo.png",
+  "contact_email": "alex@acedzn.com",
+  "legal_info_url": "http://example.com/legal"
+}
+
