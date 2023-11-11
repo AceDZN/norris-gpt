@@ -57,7 +57,7 @@ app.get('/chuck-norris/search', async (req, res) => {
   await fetchJoke(url, res)
 })
 
-app.get('/logo.png', async (_, res) => {
+app.get('/chuck-norris/logo.png', async (_, res) => {
   const filename = 'logo.png'
   res.sendFile(filename, { root: '.' })
 })

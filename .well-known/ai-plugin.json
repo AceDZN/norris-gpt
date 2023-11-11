@@ -1,19 +1,19 @@
 {
   "schema_version": "v1",
-  "name_for_human": "TinyTap Educational Games",
-  "name_for_model": "TinyTapGames",
-  "description_for_human": "Get some educational games to play with your kid.",
-  "description_for_model": "Get some educational games.",
+  "name_for_human": "NorrisGPT Chuck Norris Jokes",
+  "name_for_model": "ChuckNorrisJokes",
+  "description_for_human": "Access a variety of Chuck Norris jokes through various filters.",
+  "description_for_model": "Retrieve Chuck Norris jokes.",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "https://openaitests.oa.r.appspot.com/openapi.yaml",
+    "url": "http://chucknorris-gpt-assistant.uc.r.appspot.com/chuck-norris/openapi.yaml",
     "is_user_authenticated": false
   },
-  "logo_url": "https://openaitests.oa.r.appspot.com/logo.png",
+  "logo_url": "https://chucknorris-gpt-assistant.uc.r.appspot.com/chuck-norris/logo.png",
   "contact_email": "alex@acedzn.com",
-  "legal_info_url": "http://example.com/legal"
+  "legal_info_url": "http://chucknorris-gpt-assistant.uc.r.appspot.com/chuck-norris/privacy-policy"
 }
 
