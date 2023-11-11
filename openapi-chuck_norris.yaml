@@ -73,7 +73,7 @@ components:
         id:
           type: string
           description: Unique ID of the joke
-        value:
+        joke:
           type: string
           description: The joke text
     CategoriesResponse:
