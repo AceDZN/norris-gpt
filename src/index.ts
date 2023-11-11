@@ -28,8 +28,8 @@ app.get('/hello/:name', (req, res) => {
 const fetchJoke = async (url: string, res: any) => {
   try {
     const response = await axios.get(url)
-    const joke = response.data.value
-    res.json({ joke })
+    const { value: joke, id } = response.data
+    res.json({ joke, id })
   } catch (error) {
     console.error('Error fetching random Chuck Norris joke:', error)
     res.status(500).send('Error fetching joke')
@@ -74,8 +74,8 @@ app.get('/.well-known/ai-plugin.json', async (_, res) => {
   })
 })
 
-app.get('/openapi.yaml', async (_, res) => {
-  fs.readFile('openapi.yaml', 'utf8', (err, data) => {
+app.get('/chuck-norris/openapi.yaml', async (_, res) => {
+  fs.readFile('openapi-chuck_norris.yaml', 'utf8', (err, data) => {
     if (err) {
       console.error(err)
       res.status(500).send('Error')

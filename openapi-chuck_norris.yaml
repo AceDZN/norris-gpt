@@ -70,15 +70,9 @@ components:
     JokeResponse:
       type: object
       properties:
-        icon_url:
-          type: string
-          description: URL of the Chuck Norris icon
         id:
           type: string
           description: Unique ID of the joke
-        url:
-          type: string
-          description: URL of the joke
         value:
           type: string
           description: The joke text
