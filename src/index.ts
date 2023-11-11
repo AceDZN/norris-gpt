@@ -85,6 +85,17 @@ app.get('/chuck-norris/openapi.yaml', async (_, res) => {
     res.status(200).send(data)
   })
 })
+app.get('/chuck-norris/privacy-policy', async (_, res) => {
+  fs.readFile('src/chuck_norris/privacy.html', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err)
+      res.status(500).send('Error')
+      return
+    }
+    res.setHeader('Content-Type', 'text/html')
+    res.status(200).send(data)
+  })
+})
 
 const main = () => {
   app.listen(PORT as number, () => {
